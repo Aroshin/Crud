@@ -1,7 +1,7 @@
 import express from "express";
 import {createProfile,getallProfiles,getProfileById,updateProfile,deleteProfile} from "../controller/profileControl.js";
 import {getallContacts,getContactById,updateContact,deleteContact} from "../controller/contactControl.js";
-import {getallAddresses,getAddressById,updateAddress,deleteAddress} from "../controller/addressControl.js";
+import {getallAddresses,getAddressById,updateAddress,deleteAddress,getbystate} from "../controller/addressControl.js";
 
 const router = express.Router();
 
@@ -20,5 +20,6 @@ router.get("/getalladdress", getallAddresses);
 router.get("/getaddress/:id", getAddressById);
 router.put("/updateaddress/:id", updateAddress);
 router.delete("/deleteaddress/:id", deleteAddress);
+router.get('/getbystate/:state',getbystate)
 
 export default router;

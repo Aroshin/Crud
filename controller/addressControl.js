@@ -33,7 +33,7 @@ export const updateAddress = async(req, res)=>{
   }
 };
 
-export const deleteAddress = async(req,res) => {
+export const deleteAddress = async(req,res)=>{
   try {
     const deleted = await Address.destroy(
       {where:{id :req.params.id}});
@@ -42,3 +42,12 @@ export const deleteAddress = async(req,res) => {
     res.status(500).json({err});
   }
 };
+
+export const getbystate = async(req,res)=>{
+  try{
+    const state = await Address.findAll({where : {state : req.params.state}})
+    res.status(200).json(state)
+  }catch(err){
+    res.status(500).json(err)
+  }
+}

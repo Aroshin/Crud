@@ -12,3 +12,4 @@ app.listen(3000,()=>{
 })
 
 sequelize.sync({alter:true})
+
